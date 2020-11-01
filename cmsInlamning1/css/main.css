@@ -1796,7 +1796,6 @@
 
 	header p {
 		margin: 0 0 1.5em 0;
-		position: relative;
 		text-transform: uppercase;
 	}
 
@@ -1971,16 +1970,9 @@
 
 	input[type="checkbox"],
 	input[type="radio"] {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
 		display: block;
 		float: left;
-		margin-right: -2em;
-		opacity: 0;
 		width: 1em;
-		z-index: -1;
 	}
 
 		input[type="checkbox"] + label,
@@ -3630,11 +3622,9 @@
 		height: 3.25em;
 		left: 0;
 		line-height: 3.25em;
-		position: fixed;
 		text-align: right;
 		top: 0;
 		width: 100%;
-		z-index: 10001;
 	}
 
 		#header > h1 {
@@ -3645,7 +3635,6 @@
 			line-height: inherit;
 			margin: 0;
 			padding: 0;
-			position: absolute;
 			top: 0;
 		}
 
@@ -3690,10 +3679,8 @@
 			}
 
 		#header.alt {
-			background-color: transparent;
 			font-size: 1.25em;
 			padding: 1em 2em;
-			position: absolute;
 		}
 
 			#header.alt > h1 {

@@ -1,0 +1,20 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+
+<section class="container">
+    <form>
+      <div class="form-group">
+        <label for="sender-email">Your email address</label>
+        <input type="email" class="form-control" id="sender-email" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+      <div class="form-group form-check">
+        <label class="form-check-label" for="data-terms-conditions">I agree to the terms and conditions that apply</label>
+        <input type="checkbox" class="form-check-input" id="data-terms-conditions">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>
