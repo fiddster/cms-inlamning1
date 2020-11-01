@@ -3,7 +3,10 @@
     Layout = null;
 }
 
-@* the fun starts here *@
+@{
+    var site = Model.Root();
+    var selection = site.Children.Where(x => x.IsVisible()); <!-- see below for explanation of IsVisible helper method -->
+}
 
 <!DOCTYPE HTML>
 <!--
@@ -33,9 +36,14 @@
     <!-- Nav -->
     <nav id="nav">
         <ul class="links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="generic.html">Generic</a></li>
-            <li><a href="elements.html">Elements</a></li>
+            <ul class="links">
+                <a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a>
+                <br/>
+                @foreach (var item in selection)
+                {
+                    <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
+                }
+            </ul>
         </ul>
     </nav>
 
