@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+@{
+	var selection = Umbraco.Content(Guid.Parse("54f91486-48c3-413c-9346-55990972ad62"))
+    .ChildrenOfType("productItem")
+    .Where(x => x.IsVisible())
+    .OrderByDescending(x => x.CreateDate);
+}
+
+<ul class="list-group">
+	@foreach (var item in selection)
+	{
+		<li class="card text-center container-fluid list-group-item" style="width: 18rem;">
+    	    <img src="@item.Value("image1")" class="card-img-top" alt="...">
+    	    <a href="@item.Url" class="card-title">
+                <h5>@item.Name</h5>
+    	    </a>
+        </li>
+	}
+</ul>
